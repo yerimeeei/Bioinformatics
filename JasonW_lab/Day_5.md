@@ -47,7 +47,7 @@
 - **FASTA, FASTQ, BAM, SAM [**file types](https://hhj6212.github.io/biology/tech/2020/08/26/Bioinformatics-fileformats.html)
 
 | FASTA | 특정 분자의 서열을 나타내는 데에 사용됩니다.주로 Genome 의 각 chromosome 마다의 서열을 저장하는 데 쓰이죠.혹은 gene/transcript/protein 각각의 염기서열 및 아미노산 서열을 저장할 때 사용되는 형식 |
-| --- | | --- |
+| --- | --- |
 | FASTQ | NGS (Next generation sequencing data) 의 결과를 저장.NGS 실험을 진행하면, 그 결과로 cDNA library 서열을 읽어서 데이터로 얻을 수 있습니다. 즉, 각 cDNA library 의 염기서열을 알 수 있는거죠. 이 서열 하나를 ‘read’ 라고 하는데요. fastq 파일은 여러 read 의 정보를 한 파일에 저장. 보통 이 파일을 reference genome 에 align 한 뒤에 활용. |
 |  | 1. sequence ID: @ 로 시작하며, 해당 서열의 이름을 나타냅니다. 2. sequence: 실제로 읽은 염기서열 정보입니다. 3. description: ‘+’ 글자로 시작하는데, + 하나만 있기도 하고 sequence ID를 넣거나 설명 포함 4. quality: 각 염기서열이 얼마나 정확히 읽혔는지를 나타냄. Phred quality score 라는 표현법을 사용. |
 | BAM | binary alignment map 이라는 형식. 이 파일은 위에서 설명한 fastq 파일을 reference genome에 align 했을 때 만들어지는 파일. 즉, 각 cDNA library 조각이 reference genome 의 어느부분에서 나왔구나~ 하는 정보를 담았다는 거죠. fastq 에서는 각 read 의 염기서열과 그 품질을 알 수 있다면, BAM 파일은 염기서열과 reference 에서의 위치정보 를 알 수 있습니다. |
