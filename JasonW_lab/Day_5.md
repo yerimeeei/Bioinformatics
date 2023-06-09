@@ -46,36 +46,14 @@
 
 - **FASTA, FASTQ, BAM, SAM [**file types](https://hhj6212.github.io/biology/tech/2020/08/26/Bioinformatics-fileformats.html)
 
-| FASTA | 특정 분자의 서열을 나타내는 데에 사용됩니다.
-주로 Genome 의 각 chromosome 마다의 서열을 저장하는 데 쓰이죠.
-혹은 gene/transcript/protein 각각의 염기서열 및 아미노산 서열을 저장할 때 사용되는 형식 |
-| --- | --- |
-| FASTQ | NGS (Next generation sequencing data) 의 결과를 저장.
-NGS 실험을 진행하면, 그 결과로 cDNA library 서열을 읽어서 데이터로 얻을 수 있습니다.
-즉, 각 cDNA library 의 염기서열을 알 수 있는거죠. 이 서열 하나를 ‘read’ 라고 하는데요.
-fastq 파일은 여러 read 의 정보를 한 파일에 저장. 보통 이 파일을 reference genome 에 align 한 뒤에 활용. |
-|  | 1. sequence ID: @ 로 시작하며, 해당 서열의 이름을 나타냅니다.
-2. sequence: 실제로 읽은 염기서열 정보입니다.
-3. description: ‘+’ 글자로 시작하는데, + 하나만 있기도 하고 sequence ID를 넣거나 설명 포함
-4. quality: 각 염기서열이 얼마나 정확히 읽혔는지를 나타냄. Phred quality score 라는 표현법을 사용. |
+| FASTA | 특정 분자의 서열을 나타내는 데에 사용됩니다.주로 Genome 의 각 chromosome 마다의 서열을 저장하는 데 쓰이죠.혹은 gene/transcript/protein 각각의 염기서열 및 아미노산 서열을 저장할 때 사용되는 형식 |
+| --- | | --- |
+| FASTQ | NGS (Next generation sequencing data) 의 결과를 저장.NGS 실험을 진행하면, 그 결과로 cDNA library 서열을 읽어서 데이터로 얻을 수 있습니다. 즉, 각 cDNA library 의 염기서열을 알 수 있는거죠. 이 서열 하나를 ‘read’ 라고 하는데요. fastq 파일은 여러 read 의 정보를 한 파일에 저장. 보통 이 파일을 reference genome 에 align 한 뒤에 활용. |
+|  | 1. sequence ID: @ 로 시작하며, 해당 서열의 이름을 나타냅니다. 2. sequence: 실제로 읽은 염기서열 정보입니다. 3. description: ‘+’ 글자로 시작하는데, + 하나만 있기도 하고 sequence ID를 넣거나 설명 포함 4. quality: 각 염기서열이 얼마나 정확히 읽혔는지를 나타냄. Phred quality score 라는 표현법을 사용. |
 | BAM | binary alignment map 이라는 형식. 이 파일은 위에서 설명한 fastq 파일을 reference genome에 align 했을 때 만들어지는 파일. 즉, 각 cDNA library 조각이 reference genome 의 어느부분에서 나왔구나~ 하는 정보를 담았다는 거죠. fastq 에서는 각 read 의 염기서열과 그 품질을 알 수 있다면, BAM 파일은 염기서열과 reference 에서의 위치정보 를 알 수 있습니다. |
-| SAM | BAM 파일을 ‘볼 수 있게’ 해놓은 파일이 있습니다. 바로 SAM 파일입니다.
-BAM 파일과 SAM 파일은 동일한 정보를 가지고 있고, 서로 변환이 가능.  |
-|  | SAM 파일은 header 부분과 alignment 부분으로 이루어져 있습니다.
-- header: 파일에 대한 설명을 주는 부분입니다. @ 로 시작하는 라인들입니다.
-- alignment: 각 read에 대한 alignment 정보를 제공하는 부분입니다.
-필수적인 11개의 컬럼으로 이루어져 있고, 추가로 몇 개의 컬럼이 더 있을 수도 있음. |
-| SAM alignment column | 1. QNAME: read 이름
-2. FLAG: 2진수로 된 read alignment 에 대한 설명
-3. RNAME: refernce sequence 의 이름
-4. POS: reference sequence 에서 align 된 위치
-5. MAPQ: mapping quality. 즉 얼마나 정확히 align 되었는지.
-6. CIGAR string: alignment 정보를 표현한 문자열. Match, Gap 등의 설명을 각 염기마다 표현.
-7. RNEXT: 다음 read 의 reference sequence 이름. 주로 paired end read 에 대한 분석을 위해 사용.
-8. PNEXT: 다음 read 의 align 된 위치. 주로 paired end read 에 대한 분석을 위해 사용.
-9. TLEN: Template length. paired-end read 둘의 left-end 부터 right-end 까지의 길이.
-10. SEQ: segment sequence. 염기 서열을 나타냄.
-11. QUAL: Phread quality score |
+| SAM | BAM 파일을 ‘볼 수 있게’ 해놓은 파일이 있습니다. 바로 SAM 파일입니다.BAM 파일과 SAM 파일은 동일한 정보를 가지고 있고, 서로 변환이 가능.  |
+|  | SAM 파일은 header 부분과 alignment 부분으로 이루어져 있습니다.- header: 파일에 대한 설명을 주는 부분입니다. @ 로 시작하는 라인들입니다.- alignment: 각 read에 대한 alignment 정보를 제공하는 부분입니다. 필수적인 11개의 컬럼으로 이루어져 있고, 추가로 몇 개의 컬럼이 더 있을 수도 있음. |
+| SAM alignment column | 1. QNAME: read 이름 2. FLAG: 2진수로 된 read alignment 에 대한 설명 3. RNAME: refernce sequence 의 이름 4. POS: reference sequence 에서 align 된 위치 5. MAPQ: mapping quality. 즉 얼마나 정확히 align 되었는지. 6. CIGAR string: alignment 정보를 표현한 문자열. Match, Gap 등의 설명을 각 염기마다 표현. 7. RNEXT: 다음 read 의 reference sequence 이름. 주로 paired end read 에 대한 분석을 위해 사용. 8. PNEXT: 다음 read 의 align 된 위치. 주로 paired end read 에 대한 분석을 위해 사용. 9. TLEN: Template length. paired-end read 둘의 left-end 부터 right-end 까지의 길이. 10. SEQ: segment sequence. 염기 서열을 나타냄. 11. QUAL: Phread quality score |
 - [Youtube](https://www.youtube.com/watch?v=WLvST3OvAJ0) Video
 - Installing [SRA](https://github.com/ncbi/sra-tools/wiki/02.-Installing-SRA-Toolkit) Toolkit
 - Study [STAR](https://github.com/alexdobin/STAR) aligner (STAR → BAM → count ? (fc_output in R))
