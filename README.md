@@ -1,3 +1,3 @@
 # Bioinformatics
 
-Hi I am Yerim Nice to meet u~~
+Hi I am Yerim Rho! Nice to meet you all.
