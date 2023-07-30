@@ -1,4 +1,4 @@
-# Week 7 L1TD1 Gene Expression and Methylation
+# Week 7 L1TD1 Gene Expression (GSEA) and Methylation
 
 <img width="965" alt="genome_browser" src="https://github.com/yerimeeei/Bioinformatics/assets/134043926/9fb2837b-8b1a-4669-85de-01e51418ddc4">
 
@@ -10,6 +10,8 @@
     - [x]  fgsea package gene enrichment profile
 - [x]  [DNA methylation dataset](https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE48684) --> beta value --> quasi_random plot among three groups (normal, adenoma, cancer)
 - [ ]  ATAC seq 논문 읽어보고 ATAC-seq [Arch object](https://www.archrproject.com) [찾아보기](https://www.archrproject.com/bookdown/iterative-latent-semantic-indexing-lsi.html)
+
+## GSEA
 
 [fgsea package practice](https://github.com/ctlab/fgsea)
 
